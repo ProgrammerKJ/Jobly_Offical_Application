@@ -27,6 +27,10 @@ app.use("/companies", companiesRoutes);
 app.use("/users", usersRoutes);
 app.use("/jobs", jobsRoutes);
 
+// Add a root route for testing
+app.get("/", (req, res) => {
+  res.send("Welcome to Jobly!");
+});
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
